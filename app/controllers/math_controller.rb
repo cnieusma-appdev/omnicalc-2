@@ -9,7 +9,7 @@ class MathController < ApplicationController
   def subtraction
     @first_num = params.fetch("first_num").to_f
     @second_num = params.fetch("second_num").to_f
-    @result = @first_num - @second_num
+    @result = @second_num - @first_num
 
     render({ :template => "math_templates/subtraction.html.erb" })
   end

@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get("/street_to_coords/new", { :controller => "other", :action => "street_to_coords_form" })
   get("/street_to_coords/", { :controller => "other", :action => "street_to_coords_results" })
 
+  get("/street_to_weather/new", { :controller => "other", :action => "street_to_weather_form" })
+  get("/street_to_weather/", { :controller => "other", :action => "street_to_weather_results" })
+
 end

@@ -21,4 +21,14 @@ class OtherController < ApplicationController
 
   end
 
+  def street_to_weather_form
+    render({ :template => "other_templates/weather_form.html.erb"})
+  end
+
+  def street_to_weather_results
+
+    render({ :template => "other_templates/weather.html.erb"})
+
+  end
+
 end

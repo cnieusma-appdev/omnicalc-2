@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   get("/divide", { :controller => "math", :action => "divide" })
   get("/wizard_divide", { :controller => "math", :action => "division" })
 
-  get("/street_to_coords", { :controller => "other", :action => "street_to_coords" })
+  get("/street_to_coords", { :controller => "other", :action => "street_to_coords_form" })
 
 end

@@ -4,7 +4,7 @@ class OtherController < ApplicationController
     render({ :template => "other_templates/coordinates_form.html.erb"})
   end
 
-  def street_to_coords
+  def street_to_coords_results
     @address = params.fetch("user_street_address")
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + @address + "&key=" + ENV.fetch("GMAPS_KEY")
     raw_data = open(url).read
@@ -14,11 +14,11 @@ class OtherController < ApplicationController
     geometry_hash = first_result.fetch("geometry")
     location_hash = geometry_hash.fetch("location")
 
-    latitude = location_hash.fetch("lat")
-    longitude = location_hash.fetch("lng")
+    @latitude = location_hash.fetch("lat")
+    @longitude = location_hash.fetch("lng")
     
-
     render({ :template => "other_templates/coordinates.html.erb"})
+
   end
 
 end
